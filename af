@@ -1,0 +1,14 @@
+#!/bin/bash
+#Actual date Folder =  create timestamp dir with optional name linux/windows - https://github.com/safrm/af
+#author:  Miroslav Safr miroslav.safr@gmail.com
+
+DIRNAME=`date +%Y_%m_%d`
+if [ "x$1" != "x" ]
+then
+    DIRNAME=${DIRNAME}_$1
+fi
+
+mkdir $DIRNAME
+chmod ga+rw $DIRNAME
+echo "$PWD/$DIRNAME"
+cd $DIRNAME
