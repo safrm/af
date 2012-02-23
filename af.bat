@@ -12,4 +12,4 @@ echo creating actual date directory
 echo "***************************************************"
 if [%1]==[] ( MD "%yy%_%mm%_%dd%")
 if /i [%1] neq []  ( MD "%yy%_%mm%_%dd%_%1" )
-echo "%yy%_%mm%_%dd_%%1 created"
+echo "%yy%_%mm%_%dd%_%1 created"
