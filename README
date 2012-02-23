@@ -4,8 +4,13 @@ web: https://github.com/safrm/af
 description: Actual date Folder =  create timestamp dir with optional name linux/windows
 
 content: 
- af ........... linux script
- af.bat ....... windows script
+ af ............ linux script
+ af.bat ........ windows script
  
- install.sh ........... executes linux installation to /urs/local/bin directory
+ install.sh .... executes linux installation to /urs/local/bin directory
  on windows it is enough to copy to some folder which is on PATH (for example C:/WINDOWS/SYSTEM32)
+
+usage:
+ 
+ af ............ without commandline line parameter it creates just ./2000_05_25
+ af my_folder .. with string parameter it creates ./2000_05_25_my_folder
