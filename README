@@ -1,7 +1,7 @@
 name: af
 author:  Miroslav Safr <miroslav.safr@gmail.com>
 web: https://github.com/safrm/af
-description: Actual date Folder =  create timestamp dir with optional name linux/windows
+description: Actual date Folder =  create timestamp dir with optional name on linux/windows by 3 keyboard hits
 
 content: 
  af ............ linux script
