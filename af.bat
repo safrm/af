@@ -10,6 +10,6 @@ echo creating actual date directory
   set rest=%%j )
 @REM directory
 echo "***************************************************"
-if [%1]==[] ( MD "%yy%_%mm%_%dd%")
-if /i [%1] neq []  ( MD "%yy%_%mm%_%dd%_%1" )
-echo "%yy%_%mm%_%dd%_%1 created"
+if [%1]==[] ( MD "%yy%_%mm%_%dd%" && echo "%yy%_%mm%_%dd% created")
+if /i [%1] neq []  ( MD "%yy%_%mm%_%dd%_%1" && echo "%yy%_%mm%_%dd%_%1 created")
+
