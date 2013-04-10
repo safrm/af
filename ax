@@ -1,0 +1,22 @@
+#!/bin/bash
+#Actual date tXt file =  create timestamp text file with optional name linux/windows - https://github.com/safrm/af
+#author:  Miroslav Safr miroslav.safr@gmail.com
+
+FILENAME=`date +%Y_%m_%d`
+if [ "x$1" != "x" ]
+then
+    FILENAME=${FILENAME}_$1
+fi
+FILENAME=${FILENAME}.txt
+
+touch $FILENAME
+chmod ga+rw $FILENAME
+echo "$PWD/$FILENAME"
+if [ "x$EDITOR" != "x" ] 
+then
+    $EDITOR $FILENAME
+else
+    nano $FILENAME
+fi
+
+
