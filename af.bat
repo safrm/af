@@ -1,4 +1,4 @@
-@REM Actual date Folder =  create timestamp dir with optional name linux/windows - https://github.com/safrm/af
+@REM Actual date Folder =  create timestamp dir with optional name linux/windows - http://safrm.net/projects/af
 @REM author:  Miroslav Safr miroslav.safr@gmail.com
 
 @echo off

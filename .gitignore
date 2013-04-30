@@ -1,0 +1,7 @@
+debian/files
+debian/changelog
+debian/af.debhelper.log
+debian/af.substvars
+debian/af/*
+rpm/*
+*.changes

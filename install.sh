@@ -1,5 +1,5 @@
 #/bin/sh
-#Actual date Folder =  create timestamp dir or text file  with optional name linux/windows - https://github.com/safrm/af
+#Actual date Folder =  create timestamp dir or text file  with optional name linux/windows - http://safrm.net/projects/af
 #author:  Miroslav Safr miroslav.safr@gmail.com
 BINDIR=/usr/local/bin/
 
