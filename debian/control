@@ -7,5 +7,5 @@ Standards-Version: 1.0.0
 
 Package: af
 Architecture: all
-Depends: debhelper (>= 5), ${misc:Depends}, ${launcher:Depends}, ${shlibs:Depends}
+Depends: ${misc:Depends}, ${launcher:Depends}, ${shlibs:Depends}
 Description: Actual date Folder =  create timestamp dir with optional name on linux/windows by 3 keyboard hits
