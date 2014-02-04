@@ -1,2 +1,7 @@
 af /usr/bin/
 ax /usr/bin/
+doc/manpages/* /usr/share/man/man1/
+
+README /usr/share/doc/af
+LICENSE.LGPL /usr/share/doc/af
+

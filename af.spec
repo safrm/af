@@ -21,6 +21,7 @@ Actual date Folder =  create timestamp dir with optional name on linux/windows b
 %setup -c -n ./%{name}-%{version}
 
 %build
+cd doc && ./update_docs.sh && cd -
 
 %install
 rm -fr %{buildroot}
@@ -47,5 +48,12 @@ done
 %{_bindir}/af
 %{_bindir}/ax
 
+#man pages
+%{_mandir}/man1/af.1*
+%{_mandir}/man1/ax.1*
+
+#other docs
+%{_docdir}/af/README
+%{_docdir}/af/LICENSE.LGPL
 
 

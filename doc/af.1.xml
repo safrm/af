@@ -33,7 +33,11 @@
   <refsect1><title>DESCRIPTION</title>
     <para>
       Actual date Folder =  create timestamp dir with optional name linux/windows
+    </para>
+    <para>
        af .................... without commandline line parameter it creates just ./2000_05_25
+    </para>
+    <para>
        af &lt;my_folder&gt; .. with string parameter it creates ./2000_05_25_my_folder
     </para>
   </refsect1>

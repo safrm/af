@@ -33,7 +33,11 @@
   <refsect1><title>DESCRIPTION</title>
     <para>
     Actual date tXt file =  create timestamp text file with optional name linux/windows
+    </para>
+    <para>
      ax ............ without commandline line parameter it creates just ./2000_05_25.txt
+    </para>
+    <para>
      ax name ....... with string parameter it creates ./2000_05_25_name.txt 
     </para>
   </refsect1>
