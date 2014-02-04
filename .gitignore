@@ -5,3 +5,4 @@ debian/af.substvars
 debian/af/*
 rpm/*
 *.changes
+doc/tmp

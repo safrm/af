@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry id="af.1">
+
+<refentryinfo>
+    <title>Actual date tXt file =  create timestamp text file with optional name linux/windows</title>
+    <author>
+        <personname><firstname>Miroslav</firstname><surname>Safr</surname></personname>
+        <email>miroslav.safr@gmail.com</email>
+        <personblurb><para>Author and maintainer</para></personblurb>
+    </author>
+    <date>2013-02-03</date>
+    <productnumber>NA</productnumber>
+    <productname>af</productname>
+</refentryinfo>
+
+<refmeta>
+    <refentrytitle>ax</refentrytitle>
+	<manvolnum>1</manvolnum>
+</refmeta>
+
+
+<refnamediv>
+    <refname>ax</refname>
+    <refpurpose>Actual date tXt file =  create timestamp text file with optional name linux/windows </refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+	<cmdsynopsis>
+        <command>ax [FILE_NAME]</command>
+	</cmdsynopsis>
+</refsynopsisdiv>
+
+  <refsect1><title>DESCRIPTION</title>
+    <para>
+    Actual date tXt file =  create timestamp text file with optional name linux/windows
+     ax ............ without commandline line parameter it creates just ./2000_05_25.txt
+     ax name ....... with string parameter it creates ./2000_05_25_name.txt 
+    </para>
+  </refsect1>
+  
+  <refsect1><title>FILE_NAME</title>
+    <para>
+      Name string used as suffix for text file name.
+    </para>
+  </refsect1>
+  
+
+  <refsect1><title>SEE ALSO</title>
+    <para>
+      <ulink url="http://safrm.net/projects/af/"/>
+    </para>
+  </refsect1>
+
+  <refsect1><title>AUTHOR</title>
+    Miroslav Šafr &lt;miroslav.safr@gmail.com&gt;
+  </refsect1>
+  <refsect1><title>LICENSE</title>
+   LGPL2
+  </refsect1>
+</refentry>
