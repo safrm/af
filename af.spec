@@ -10,8 +10,10 @@ BuildArch:  noarch
 URL:        http://safrm.net/projects/af/
 Vendor:     Miroslav Safr <miroslav.safr@gmail.com>
 Source0:    %{name}-%{version}.tar.bz2
-Autoreq: on
+Autoreq:    on
 Autoreqprov: on
+BuildRequires:  xsltproc
+BuildRequires:  docbook-xsl
 
 %description
 Actual date Folder =  create timestamp dir with optional name on linux/windows by 3 keyboard hits
@@ -32,6 +34,15 @@ sed -i".bkp" "1,/^VERSION_DATE=/s/^VERSION_DATE=.*/VERSION_DATE=%{APP_BUILD_DATE
 install -m 755 ./ax %{buildroot}/usr/bin/
 sed -i".bkp" "1,/^VERSION=/s/^VERSION=.*/VERSION=%{version}/" %{buildroot}/usr/bin/ax && rm -f %{buildroot}/usr/bin/ax.bkp
 sed -i".bkp" "1,/^VERSION_DATE=/s/^VERSION_DATE=.*/VERSION_DATE=%{APP_BUILD_DATE}/" %{buildroot}/usr/bin/ax && rm -f %{buildroot}/usr/bin/ax.bkp
+
+#documentation
+MANPAGES=`find ./doc/manpages -type f`
+install -d -m 755 %{buildroot}%{_mandir}/man1
+install -m 644 $MANPAGES %{buildroot}%{_mandir}/man1
+DOCS="./README ./LICENSE.LGPL"
+install -d -m 755 %{buildroot}%{_docdir}/af
+install -m 644 $DOCS %{buildroot}%{_docdir}/af
+
 
 %check
 for TEST in $(  grep -r -l -h "#\!/bin/bash" . )
