@@ -27,21 +27,21 @@ cd doc && ./update_docs.sh && cd -
 
 %install
 rm -fr %{buildroot}
-mkdir -p %{buildroot}/usr/bin
-install -m 755 ./af %{buildroot}/usr/bin/
-sed -i".bkp" "1,/^VERSION=/s/^VERSION=.*/VERSION=%{version}/" %{buildroot}/usr/bin/af && rm -f %{buildroot}/usr/bin/af.bkp
-sed -i".bkp" "1,/^VERSION_DATE=/s/^VERSION_DATE=.*/VERSION_DATE=%{APP_BUILD_DATE}/" %{buildroot}/usr/bin/af && rm -f %{buildroot}/usr/bin/af.bkp
-install -m 755 ./ax %{buildroot}/usr/bin/
-sed -i".bkp" "1,/^VERSION=/s/^VERSION=.*/VERSION=%{version}/" %{buildroot}/usr/bin/ax && rm -f %{buildroot}/usr/bin/ax.bkp
-sed -i".bkp" "1,/^VERSION_DATE=/s/^VERSION_DATE=.*/VERSION_DATE=%{APP_BUILD_DATE}/" %{buildroot}/usr/bin/ax && rm -f %{buildroot}/usr/bin/ax.bkp
+mkdir -p %{buildroot}%{_bindir}
+install -m 755 ./af %{buildroot}%{_bindir}
+sed -i".bkp" "1,/^VERSION=/s/^VERSION=.*/VERSION=%{version}/" %{buildroot}%{_bindir}/af && rm -f %{buildroot}%{_bindir}/af.bkp
+sed -i".bkp" "1,/^VERSION_DATE=/s/^VERSION_DATE=.*/VERSION_DATE=%{APP_BUILD_DATE}/" %{buildroot}%{_bindir}/af && rm -f %{buildroot}%{_bindir}/af.bkp
+install -m 755 ./ax %{buildroot}%{_bindir}
+sed -i".bkp" "1,/^VERSION=/s/^VERSION=.*/VERSION=%{version}/" %{buildroot}%{_bindir}/ax && rm -f %{buildroot}%{_bindir}/ax.bkp
+sed -i".bkp" "1,/^VERSION_DATE=/s/^VERSION_DATE=.*/VERSION_DATE=%{APP_BUILD_DATE}/" %{buildroot}%{_bindir}/ax && rm -f %{buildroot}%{_bindir}/ax.bkp
 
 #documentation
 MANPAGES=`find ./doc/manpages -type f`
 install -d -m 755 %{buildroot}%{_mandir}/man1
 install -m 644 $MANPAGES %{buildroot}%{_mandir}/man1
 DOCS="./README ./LICENSE.LGPL"
-install -d -m 755 %{buildroot}%{_docdir}/af
-install -m 644 $DOCS %{buildroot}%{_docdir}/af
+install -d -m 755 %{buildroot}%{_datadir}/doc/af
+install -m 644 $DOCS %{buildroot}%{_datadir}/doc//af
 
 
 %check
@@ -64,7 +64,7 @@ done
 %{_mandir}/man1/ax.1*
 
 #other docs
-%{_docdir}/af/README
-%{_docdir}/af/LICENSE.LGPL
+%{_datadir}/doc/af/README
+%{_datadir}/doc/af/LICENSE.LGPL
 
 
