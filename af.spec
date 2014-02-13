@@ -43,8 +43,9 @@ MANPAGES=`find ./doc/manpages -type f`
 install -d -m 755 %{buildroot}%{_mandir}/man1
 install -m 644 $MANPAGES %{buildroot}%{_mandir}/man1
 DOCS="./README ./LICENSE.LGPL"
-install -d -m 755 %{buildroot}%{_datadir}/doc/af
-install -m 644 $DOCS %{buildroot}%{_datadir}/doc//af
+install -d -m 755 %{buildroot}%{_docdir}/af
+sed -i".bkp" "1,/Version: /s/Version:   */Version:   %{version} %{APP_BUILD_DATE}/"  %{buildroot}%{_docdir}/af/README && rm -f %{buildroot}%{_docdir}/af/README.bkp
+install -m 644 $DOCS %{buildroot}%{_docdir}/af
 
 
 %check
@@ -67,7 +68,8 @@ done
 %{_mandir}/man1/ax.1*
 
 #other docs
-%{_datadir}/doc/af/README
-%{_datadir}/doc/af/LICENSE.LGPL
+%dir %{_docdir}/gr-scripts
+%{_docdir}/af/README
+%{_docdir}/af/LICENSE.LGPL
 
 
