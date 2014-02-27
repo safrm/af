@@ -68,7 +68,7 @@ done
 %{_mandir}/man1/ax.1*
 
 #other docs
-%dir %{_docdir}/gr-scripts
+%dir %{_docdir}/af
 %{_docdir}/af/README
 %{_docdir}/af/LICENSE.LGPL
 
