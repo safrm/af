@@ -2,7 +2,7 @@ Source: af
 Section: utils
 Priority: optional
 Maintainer: Miroslav Safr <miroslav.safr@gmail.com>
-Build-Depends: debhelper (>= 5), appver, xsltproc, docbook-xsl
+Build-Depends: debhelper (>= 5), appver, jenkins-support-scripts (>= 1.2.3  )
 Standards-Version: 3.8.1
 Homepage: http://safrm.net/projects/af
 

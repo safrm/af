@@ -12,11 +12,8 @@ Vendor:     Miroslav Safr <miroslav.safr@gmail.com>
 Source0:    %{name}-%{version}.tar.bz2
 Autoreq:    on
 Autoreqprov: on
-#BuildRequires:  xsltproc
-BuildRequires:  libxslt
-#BuildRequires:  docbook-xsl
-BuildRequires: docbook-xsl-stylesheets
 BuildRequires:  appver >= 1.1.1
+BuildRequires: jenkins-support-scripts >= 1.2.3
 
 %description
 Actual date Folder =  create timestamp dir with optional name on linux/windows by 3 keyboard hits
@@ -26,7 +23,7 @@ Actual date Folder =  create timestamp dir with optional name on linux/windows b
 %setup -c -n ./%{name}-%{version}
 
 %build
-cd doc && ./update_docs.sh %{version} && cd -
+jss-docs-update ./doc -sv %{version} 
 
 %install
 rm -fr %{buildroot}
@@ -42,11 +39,6 @@ sed -i".bkp" "1,/^VERSION_DATE=/s/^VERSION_DATE=.*/VERSION_DATE=%{APP_BUILD_DATE
 MANPAGES=`find ./doc/manpages -type f`
 install -d -m 755 %{buildroot}%{_mandir}/man1
 install -m 644 $MANPAGES %{buildroot}%{_mandir}/man1
-DOCS="./README ./LICENSE.LGPL"
-install -d -m 755 %{buildroot}%{_docdir}/af
-sed -i".bkp" "1,/Version: /s/Version:   */Version:   %{version} %{APP_BUILD_DATE}/"  %{buildroot}%{_docdir}/af/README && rm -f %{buildroot}%{_docdir}/af/README.bkp
-install -m 644 $DOCS %{buildroot}%{_docdir}/af
-
 
 %check
 for TEST in $(  grep -r -l -h "#\!/bin/bash" . )
@@ -63,13 +55,8 @@ done
 %{_bindir}/af
 %{_bindir}/ax
 
-#man pages
+#manpages
 %{_mandir}/man1/af.1*
 %{_mandir}/man1/ax.1*
-
-#other docs
-%dir %{_docdir}/af
-%{_docdir}/af/README
-%{_docdir}/af/LICENSE.LGPL
 
 
