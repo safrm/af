@@ -20,7 +20,7 @@ if [ ! -e $MANXSL ]; then
 fi
 
 #automatic version 
-if command -v appver &>/dev/null; then . appver $1; else APP_SHORT_VERSION=NA ; APP_FULL_VERSION_TAG=NA ; APP_BUILD_DATE=`date +'%Y%m%d_%H%M'`; fi
+if command -v appver 1>/dev/null 2>&1 ; then . appver $1; else APP_SHORT_VERSION=NA ; APP_FULL_VERSION_TAG=NA ; APP_BUILD_DATE=`date +'%Y%m%d_%H%M'`; fi
 
 TEMP_DIR=./tmp
 rm -fr $TEMP_DIR && mkdir $TEMP_DIR
