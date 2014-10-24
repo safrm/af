@@ -1,0 +1,31 @@
+#!/bin/bash
+#Actual date Folder with counter - http://safrm.net/projects/af
+#author:  Miroslav Safr miroslav.safr@gmail.com
+VERSION=NA
+VERSION_DATE=NA
+
+DATE=`date +%Y_%m_%d`
+ID=1
+DIRNAME=$DATE_$ID
+
+while : 
+do
+    echo "DIR"
+    if [ -d "./${DATE}_${ID}" ]; then
+    	ID=$(($ID + 1)) ;
+    else
+        DIRNAME=${DATE}_${ID}
+        break;
+    fi
+done
+
+if [ "x$1" != "x" ]
+then
+    DIRNAME=${DIRNAME}_$1
+fi
+
+mkdir $DIRNAME
+chmod ga+rw $DIRNAME
+echo "$PWD/$DIRNAME"
+cd $DIRNAME
+

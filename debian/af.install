@@ -1,4 +1,5 @@
 af /usr/bin/
+aff /usr/bin/
 ax /usr/bin/
 doc/manpages/* /usr/share/man/man1/
 

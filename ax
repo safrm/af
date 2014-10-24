@@ -1,7 +1,7 @@
 #!/bin/bash
 #Actual date tXt file =  create timestamp text file with optional name linux/windows - http://safrm.net/projects/af
 #author:  Miroslav Safr miroslav.safr@gmail.com
-VERSION=NA                                                                   
+VERSION=NA
 VERSION_DATE=NA
 
 FILENAME=`date +%Y_%m_%d`

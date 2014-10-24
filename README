@@ -5,6 +5,7 @@ description: Actual date Folder =  create timestamp dir with optional name on li
 
 content: 
  af ............ linux script for directory creation
+ aff ........... linux script for directory creation with counter
  af.bat ........ windows script for directory creation
  ax ............ linux script for text file creation
  ax.bat ........ windows script for text file creation 
@@ -16,6 +17,9 @@ usage:
  
  af ............ without commandline line parameter it creates just ./2000_05_25
  af my_folder .. with string parameter it creates ./2000_05_25_my_folder
+
+ aff ........... without commandline line parameter it creates first empty ./2000_05_25_1 ./2000_05_25_2
+ aff my_folder . with string parameter it creates ./2000_05_25_1_my_folder
 
  ax ............ without commandline line parameter it creates just ./2000_05_25.txt
  ax name ....... with string parameter it creates ./2000_05_25_name.txt

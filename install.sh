@@ -30,6 +30,7 @@ jss-docs-update ./doc
 
 mkdir -p -m 0755 $BINDIR
 install -m 0777 -v ./af  $BINDIR
+install -m 0777 -v ./aff  $BINDIR
 install -m 0777 -v ./ax  $BINDIR
 
 MANPAGES=`find ./doc/manpages -type f`
