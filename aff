@@ -19,8 +19,7 @@ do
     fi
 done
 
-if [ "x$1" != "x" ]
-then
+if [ $# -gt 0 ]; then
     DIRNAME=${DIRNAME}_$1
 fi
 

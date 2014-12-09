@@ -5,8 +5,8 @@ VERSION=NA
 VERSION_DATE=NA
 
 DIRNAME=`date +%Y_%m_%d`
-if [ "x$1" != "x" ]
-then
+
+if [ $# -gt 0 ]; then
     DIRNAME=${DIRNAME}_$1
 fi
 

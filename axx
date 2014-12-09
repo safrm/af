@@ -4,7 +4,21 @@
 VERSION=NA
 VERSION_DATE=NA
 
-FILENAME=`date +%Y_%m_%d`
+
+DATE=`date +%Y_%m_%d`
+ID=1
+FILENAME=$DATE_$ID
+
+while : 
+do
+    if [ -f "./${DATE}_${ID}" ]; then
+    	ID=$(($ID + 1)) ;
+    else
+        FILENAME=${DATE}_${ID}
+        break;
+    fi
+done
+
 if [ $# -gt 0 ]; then
     FILENAME=${FILENAME}_$1
 fi
@@ -13,11 +27,9 @@ FILENAME=${FILENAME}.txt
 touch $FILENAME
 chmod ga+rw $FILENAME
 echo "$PWD/$FILENAME"
-
 if [ -n "$EDITOR" ]; then
     $EDITOR $FILENAME
 else
     nano $FILENAME
 fi
-
 
