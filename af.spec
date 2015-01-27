@@ -60,6 +60,7 @@ done
 
 #manpages
 %{_mandir}/man1/af.1*
+%{_mandir}/man1/aff.1*
 %{_mandir}/man1/ax.1*
 
 
