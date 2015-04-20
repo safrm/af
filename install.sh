@@ -17,15 +17,15 @@ if command -v appver 1>/dev/null 2>&1 ; then . appver; else APP_SHORT_VERSION=NA
 #test
 for TEST in $(  grep -r -l -h --exclude-dir=test --exclude-dir=.git  "#\!/bin/sh" . )
 do
-		sh -n $TEST
-		if  [ $? != 0 ]; then
-			echo "syntax error in $TEST, exiting.." 
-			exit 1
-		fi
+    sh -n $TEST
+    if  [ $? != 0 ]; then
+        echo "syntax error in $TEST, exiting.."
+        exit 1
+    fi
 done
 
 #update documentation
-jss-docs-update ./doc 
+jss-docs-update ./doc
 
 
 mkdir -p -m 0755 $BINDIR

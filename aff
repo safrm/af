@@ -8,11 +8,11 @@ DATE=`date +%Y_%m_%d`
 ID=1
 DIRNAME=$DATE_$ID
 
-while : 
+while :
 do
     echo "DIR"
     if [ -d "./${DATE}_${ID}" ]; then
-    	ID=$(($ID + 1)) ;
+        ID=$(($ID + 1)) ;
     else
         DIRNAME=${DATE}_${ID}
         break;

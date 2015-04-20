@@ -9,10 +9,10 @@ DATE=`date +%Y_%m_%d`
 ID=1
 FILENAME=$DATE_$ID
 
-while : 
+while :
 do
     if [ -f "./${DATE}_${ID}" ]; then
-    	ID=$(($ID + 1)) ;
+        ID=$(($ID + 1)) ;
     else
         FILENAME=${DATE}_${ID}
         break;
