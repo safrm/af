@@ -6,6 +6,7 @@
 
 appver_basic_scripts_test
 
+$MKDIR_755 $BINDIR
 $INSTALL_755 ./af $BINDIR
 $INSTALL_755 ./aff $BINDIR
 $INSTALL_755 ./ax $BINDIR
