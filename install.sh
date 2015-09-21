@@ -1,39 +1,16 @@
 #/bin/sh
-#Actual date Folder =  create timestamp dir or text file  with optional name linux/windows - http://safrm.net/projects/af
-#author:  Miroslav Safr miroslav.safr@gmail.com
-BINDIR=/usr/local/bin/
-MANDIR=/usr/share/man
+#Actual date Folder =  create timestamp dir or text file  with optional name linux/windows
+#web: http://safrm.net/projects/af
+#author:  Miroslav Safr <miroslav.safr@gmail.com>
+. appver-installer
 
-#root check
-USERID=`id -u`
-[ $USERID -eq "0" ] || {
-    echo "I cannot continue, you should be root or run it with sudo!"
-    exit 0
-}
+appver_basic_scripts_test
 
-#automatic version
-if command -v appver 1>/dev/null 2>&1 ; then . appver; else APP_SHORT_VERSION=NA ; APP_FULL_VERSION_TAG=NA ; APP_BUILD_DATE=`date +'%Y%m%d_%H%M'`; fi
+$INSTALL_755 ./af $BINDIR
+$INSTALL_755 ./aff $BINDIR
+$INSTALL_755 ./ax $BINDIR
+appver_update_version_and_date $BINDIR/af
+appver_update_version_and_date $BINDIR/aff
+appver_update_version_and_date $BINDIR/ax
 
-#test
-for TEST in $(  grep -r -l -h --exclude-dir=test --exclude-dir=.git  "#\!/bin/sh" . )
-do
-    sh -n $TEST
-    if  [ $? != 0 ]; then
-        echo "syntax error in $TEST, exiting.."
-        exit 1
-    fi
-done
-
-#update documentation
-jss-docs-update ./doc
-
-
-mkdir -p -m 0755 $BINDIR
-install -m 0777 -v ./af  $BINDIR
-install -m 0777 -v ./aff  $BINDIR
-install -m 0777 -v ./ax  $BINDIR
-
-MANPAGES=`find ./doc/manpages -type f`
-sudo install -d -m 755 $MANDIR/man1
-sudo install -m 644 $MANPAGES $MANDIR/man1
 
