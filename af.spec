@@ -1,7 +1,7 @@
 %define APP_BUILD_DATE %(date +'%%Y%%m%%d_%%H%%M')
 
 Name:       af
-Summary:    Actual date Folder 
+Summary:    Actual date Folder
 Version:    1.0.0
 Release:    1
 Group:      Development/Tools
@@ -23,7 +23,7 @@ Actual date Folder =  create timestamp dir with optional name on linux/windows b
 %setup -c -n ./%{name}-%{version}
 
 %build
-jss-docs-update ./doc -sv %{version} 
+jss-docs-update ./doc -sv %{version}
 
 %install
 rm -fr %{buildroot}
@@ -44,14 +44,14 @@ install -m 644 $MANPAGES %{buildroot}%{_mandir}/man1
 rm -fr %{buildroot}
 
 %check
-for TEST in $(  grep -r -l -h "#\!/bin/bash" . )
+for TEST in $(  grep -r -l -h "#\!/bin/sh" . )
 do
 	sh -n $TEST
 	if  [ $? != 0 ]; then
-		echo "syntax error in $TEST, exiting.." 
+		echo "syntax error in $TEST, exiting.."
 		exit 1
 	fi
-done 
+done
 
 %files
 %defattr(-,root,root,-)

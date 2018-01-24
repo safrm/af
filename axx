@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #Actual date tXt file =  create timestamp text file with optional name linux/windows - http://safrm.net/projects/af
 #author:  Miroslav Safr miroslav.safr@gmail.com
 VERSION=NA
