@@ -11,25 +11,25 @@ FILENAME=$DATE_$ID
 
 while :
 do
-    if [ -f "./${DATE}_${ID}" ]; then
+    if [ -f "./$DATE_$ID" ]; then
         ID=$(($ID + 1)) ;
     else
-        FILENAME=${DATE}_${ID}
+        FILENAME=$DATE_$ID
         break;
     fi
 done
 
 if [ $# -gt 0 ]; then
-    FILENAME=${FILENAME}_$1
+    FILENAME="$FILENAME_$1"
 fi
-FILENAME=${FILENAME}.txt
+FILENAME="$FILENAME.txt"
 
-touch $FILENAME
-chmod ga+rw $FILENAME
+touch "$FILENAME"
+chmod ga+rw "$FILENAME"
 echo "$PWD/$FILENAME"
 if [ -n "$EDITOR" ]; then
-    $EDITOR $FILENAME
+    "$EDITOR" "$FILENAME"
 else
-    nano $FILENAME
+    nano "$FILENAME"
 fi
 

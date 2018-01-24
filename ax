@@ -6,18 +6,18 @@ VERSION_DATE=NA
 
 FILENAME=`date +%Y_%m_%d`
 if [ $# -gt 0 ]; then
-    FILENAME=${FILENAME}_$1
+    FILENAME="$FILENAME_$1"
 fi
-FILENAME=${FILENAME}.txt
+FILENAME="$FILENAME.txt"
 
-touch $FILENAME
-chmod ga+rw $FILENAME
+touch "$FILENAME"
+chmod ga+rw "$FILENAME"
 echo "$PWD/$FILENAME"
 
 if [ -n "$EDITOR" ]; then
-    $EDITOR $FILENAME
+    "$EDITOR" "$FILENAME"
 else
-    nano $FILENAME
+    nano "$FILENAME"
 fi
 
 

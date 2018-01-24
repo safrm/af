@@ -7,10 +7,10 @@ VERSION_DATE=NA
 DIRNAME=`date +%Y_%m_%d`
 
 if [ $# -gt 0 ]; then
-    DIRNAME=${DIRNAME}_$1
+    DIRNAME="$DIRNAME_$1"
 fi
 
-mkdir $DIRNAME
-chmod ga+rw $DIRNAME
+mkdir "$DIRNAME"
+chmod ga+rw "$DIRNAME"
 echo "$PWD/$DIRNAME"
-cd $DIRNAME
+cd "$DIRNAME"
